@@ -15,9 +15,9 @@ static double now_sec(void) {
 
 static uint64_t bench(uint64_t n) {
 	for (uint64_t i = 0; i < n; ++i) {
-		char* p = new char[1]; 
+		char* p = new char; 
 		ESCAPE(p);
-		delete[] p;
+		delete p;
 		FENCE();
 	}
 	return n;
