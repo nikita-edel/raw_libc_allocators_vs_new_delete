@@ -15,7 +15,12 @@ static double now_sec(void) {
 static uint64_t bench(uint64_t n) {
 	for (uint64_t i = 0; i < n; ++i) {
 		char* p = malloc(1);
-		if(!p) abort(); //emulate throwing an exception
+		//as far as i know, new throws bad_alloc. but i compile the cpp file
+		//with -fno-exceptions, so it should be aquivalent to this:
+		//(calling std::terminate) but im pretty sure that is 1:1 aquivalent
+		//the cpu can just very easily predict the branches? maybe not why would
+		//it be any difference than a new call that has a branch...?
+		if(!p) abort();
 		ESCAPE(p);
 		free(p);
 		FENCE();
