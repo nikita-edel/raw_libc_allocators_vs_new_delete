@@ -21,7 +21,11 @@ bench_c$(EXT): main.c
 bench_cpp$(EXT): main.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $<
 
+run: all
+	./bench_c$(EXT)
+	./bench_cpp$(EXT)
+
 clean:
 	$(RM) $(TARGETS)
 
-.PHONY: all clean
+.PHONY: all clean run
