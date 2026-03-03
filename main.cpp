@@ -40,7 +40,7 @@ int main(void) {
 	}
 
 	double ns = total ? elapsed * 1e9 / (double)total : 0.0;
-	printf("malloc + free | ns/op: %.2f | total_ops: %llu\n",
+	printf("new + delete | ns/op: %.2f | total_ops: %llu\n",
 			ns, (unsigned long long)total);
 	return 0;
 }
