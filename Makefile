@@ -1,7 +1,7 @@
 CC      = gcc
 CXX     = g++
-CFLAGS  = -O2 -std=c99   -D_POSIX_C_SOURCE=200809L
-CXXFLAGS= -O2 -std=c++17 -fno-exceptions
+CFLAGS  = -O3 -std=c99   -D_POSIX_C_SOURCE=200809L
+CXXFLAGS= -O3 -std=c++17 -fno-exceptions
 
 ifeq ($(OS),Windows_NT)
 	EXT = .exe
